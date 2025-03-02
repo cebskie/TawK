@@ -14,6 +14,7 @@ def get_db_connection():
 
 # Streamlit UI
 st.title("Check Product Stock")
+st.sidebar.image("TawK logo.png", use_container_width=True)
 
 # Get category names from the category table
 try:
