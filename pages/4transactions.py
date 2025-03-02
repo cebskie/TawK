@@ -55,6 +55,7 @@ def execute_transaction(product_name, trans_type, quantity, cat_id):
 
 # UI
 st.title("Inventory Transaction Management")
+st.sidebar.image("TawK logo.png", use_container_width=True)
 
 # Get categories for dropdown
 categories = get_categories()
