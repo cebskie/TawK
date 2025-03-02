@@ -45,6 +45,7 @@ def get_categories():
 
 # Streamlit UI
 st.title("Add New Product")
+st.sidebar.image("TawK logo.png", use_container_width=True)
 
 # Get categories and create a dropdown
 categories = get_categories()
