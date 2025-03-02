@@ -14,6 +14,7 @@ def get_db_connection():
 
  # Streamlit UI
 st.title("User Registration")
+st.sidebar.image("TawK logo.png", use_container_width=True)
 
 # User input fields
 username = st.text_input("Enter Username")
