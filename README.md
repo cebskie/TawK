@@ -79,4 +79,30 @@ Track product performance and inventory trends:
 ## 🚀 Why TawK?
 
 - 🕒 **Real-time tracking** for up-to-date stock levels
-- 🧭 **Int**
+- 🧭 **Intuitive interface** for smooth user experience
+- 📊 **Insight-driven dashboards** to support smart decisions
+- 🌱 **Scalable** for businesses of any size
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend & App Framework:** Streamlit
+- **Backend/Data Handling:** Python
+- **Database:** SQLite / MySQL (based on your config)
+- **Visualization:** Streamlit Charts / Matplotlib / Plotly
+
+---
+
+## 🖥️ How to Run TawK
+
+```bash
+# Step 1: Clone the repository
+git clone https://github.com/your-username/tawk.git
+cd tawk
+
+# Step 2: Install dependencies
+pip install -r requirements.txt
+
+# Step 3: Run the app
+streamlit run app.py
