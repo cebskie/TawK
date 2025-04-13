@@ -101,8 +101,13 @@ Track product performance and inventory trends:
 git clone https://github.com/your-username/tawk.git
 cd tawk
 
-# Step 2: Install dependencies
+# Step 2: Set up the database
+# Open MySQL and run the following (or use a GUI like phpMyAdmin)
+
+mysql -u your_username -p < inventory.sql
+
+# Step 3: Install dependencies
 pip install -r requirements.txt
 
-# Step 3: Run the app
+# Step 4: Run the app
 streamlit run app.py
