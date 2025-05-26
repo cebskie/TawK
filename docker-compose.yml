@@ -10,12 +10,18 @@ services:
       - .:/app
     depends_on:
       - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD:
+      DB_NAME: inventory
 
   db:
     image: mysql:8.0
     container_name: tawk_db
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: inventory
     ports:
       - "3306:3306"
