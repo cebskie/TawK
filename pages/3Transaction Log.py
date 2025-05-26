@@ -5,7 +5,7 @@ import mysql.connector
 # Function to connect to the database
 def get_db_connection():
     return mysql.connector.connect(
-        host='localhost',
+        host='db',
         user='root',
         password='',
         database='inventory'

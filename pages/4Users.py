@@ -5,7 +5,7 @@ import pandas as pd
 # Function to connect to the database
 def get_db_connection():
     connection = mysql.connector.connect(
-        host='localhost',      # e.g. localhost or IP address
+        host='db',      # e.g. localhost or IP address
         user='root',      # Your MySQL username
         password='',  # Your MySQL password
         database='inventory'  # Your MySQL database name
