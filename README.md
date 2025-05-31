@@ -96,6 +96,7 @@ Track product performance and inventory trends:
 
 ## 🖥️ How to Run TawK
 
+#### 1. Build Manual
 ```bash
 # Step 1: Clone the repository
 git clone https://github.com/your-username/tawk.git
@@ -111,3 +112,19 @@ pip install -r requirements.txt
 
 # Step 4: Run the app
 streamlit run app.py
+```
+
+#### 2. Use Docker
+```bash
+# Step 1 : Install Docker Desktop on your device
+docker login
+
+# Step 2 : Pull the image from Docker Hub
+docker pull ainiyeaay/tawk:latest
+
+# Step 3 : Run the container
+docker run -p 8501:8501 ainiyeeay/tawk:latest
+
+# Step 4 : Open your browser and go to
+http://localhost:8501
+```
