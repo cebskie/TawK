@@ -95,6 +95,7 @@ Track product performance and inventory trends:
 ---
 
 ## 🖥️ How to Run TawK
+You can choose the way to run the app:
 
 #### 1. Build Manual
 ```bash
@@ -113,8 +114,9 @@ pip install -r requirements.txt
 # Step 4: Run the app
 streamlit run app.py
 ```
+OR
 
-#### 2. Use Docker
+#### 2. Use Docker (Don't need to cloning the Github Repo)
 ```bash
 # Step 1 : Install Docker Desktop on your device
 docker login
