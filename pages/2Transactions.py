@@ -5,7 +5,7 @@ import pandas as pd
 # Function to connect to the database
 def get_db_connection():
     return mysql.connector.connect(
-        host="db",
+        host="localhost",
         user="root",
         password="",
         database="inventory"
@@ -18,7 +18,7 @@ if not st.session_state.get("logged_in"):
 if st.sidebar.button("Logout"):
     st.session_state.logged_in = False
     st.rerun()
-st.sidebar.image("logo.svg", use_container_width=True)
+st.sidebar.image("logo.svg")
 
 # User ID 
 

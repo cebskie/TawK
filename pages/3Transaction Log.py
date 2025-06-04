@@ -5,7 +5,7 @@ import mysql.connector
 # Function to connect to the database
 def get_db_connection():
     return mysql.connector.connect(
-        host='db',
+        host='localhost',
         user='root',
         password='',
         database='inventory'
@@ -23,7 +23,7 @@ if st.sidebar.button("Logout"):
 if st.session_state.get("role") != "admin":
     st.error("Unauthorized access.")
     st.stop()
-st.sidebar.image("logo.svg", use_container_width=True)
+st.sidebar.image("logo.svg")
 
 # Streamlit UI
 st.title("Transactions Log")

@@ -5,7 +5,7 @@ import pandas as pd
 # Function to connect to the database
 def get_db_connection():
     connection = mysql.connector.connect(
-        host='db',      # e.g. localhost or IP address
+        host='localhost',      # e.g. localhost or IP address
         user='root',      # Your MySQL username
         password='',  # Your MySQL password
         database='inventory'  # Your MySQL database name
@@ -22,7 +22,7 @@ if st.session_state.get("role") != "admin":
 if st.sidebar.button("Logout"):
     st.session_state.logged_in = False
     st.rerun()
-st.sidebar.image("logo.svg", use_container_width=True)
+st.sidebar.image("logo.svg")
 
 # Streamlit UI
 # Register User

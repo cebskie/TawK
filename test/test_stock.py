@@ -1,4 +1,9 @@
-# tests/test_db.py
+# tests/test_stock.py
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from core.db import fetch_categories, fetch_products_by_category, fetch_product_details
 
 def test_fetch_categories():
