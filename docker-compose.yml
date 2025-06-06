@@ -11,7 +11,7 @@ services:
     depends_on:
       - db
     environment:
-      DB_HOST: localhost
+      DB_HOST: db
       DB_USER: root
       DB_PASSWORD:
       DB_NAME: inventory
