@@ -4,3 +4,6 @@ pandas==2.2.2
 plotly==5.21.0
 python-dotenv==1.0.1
 pytest
+streamlit-option-menu
+numpy
+matplotlib
