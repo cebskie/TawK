@@ -19,13 +19,12 @@ if "logged_in" not in st.session_state:
 
 # Centered layout using columns
 def centered_login():
-    col1, col2 = st.columns([1, 2])
+    col1, col2 = st.columns([2, 3])  # more space for text
     with col1:
-        st.image("logo.svg", width=400)
-    with col2:
-        st.markdown("<h2 style='text-align: center;'>Welcome to TawK</h2>", unsafe_allow_html=True)
-        st.write(" ")
+        st.image("logo.svg", width=280)  # reduced width
 
+    with col2:
+        st.markdown("<h2 style='text-align: left;'>Welcome to TawK</h2>", unsafe_allow_html=True)
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
 
@@ -54,6 +53,7 @@ def centered_login():
                 conn.close()
             except Exception as e:
                 st.error(f"Database error: {e}")
+
 
 if not st.session_state.logged_in:
     st.markdown(

@@ -4,13 +4,30 @@ import pandas as pd
 import os
 
 # Connect to DB
+import os
+import streamlit as st
+import mysql.connector
+
+# Connect to DB (Streamlit Cloud or local)
 def get_db_connection():
-    return mysql.connector.connect(
-        host=os.getenv('DB_HOST', 'localhost'),
-        user=os.getenv('DB_USER', 'root'),
-        password=os.getenv('DB_PASSWORD', ''),
-        database=os.getenv('DB_NAME', 'inventory')
-    )
+    if "mysql" in st.secrets:
+        # Use Streamlit Cloud secrets
+        return mysql.connector.connect(
+            host=st.secrets["mysql"]["host"],
+            user=st.secrets["mysql"]["user"],
+            password=st.secrets["mysql"]["password"],
+            database=st.secrets["mysql"]["database"],
+            port=st.secrets["mysql"]["port"]
+        )
+    else:
+        # Use local environment variables
+        return mysql.connector.connect(
+            host=os.getenv('DB_HOST', 'localhost'),
+            user=os.getenv('DB_USER', 'root'),
+            password=os.getenv('DB_PASSWORD', ''),
+            database=os.getenv('DB_NAME', 'inventory')
+        )
+
 
 def check_authentication():
     if not st.session_state.get("logged_in"):
