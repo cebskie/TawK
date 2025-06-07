@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Pytest inside the container
         run: |
-          docker exec tawk pytest /app/test --disable-warnings
+          docker exec tawk_app pytest /app/test --disable-warnings
 
       - name: Stop Docker containers
         run: docker-compose down
