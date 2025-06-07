@@ -27,4 +27,4 @@ jobs:
           docker exec tawk_app pytest /app/test --disable-warnings
 
       - name: Stop Docker containers
-        run: docker-compose down
+        run: docker compose down
