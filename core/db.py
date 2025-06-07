@@ -20,13 +20,15 @@ def get_db_connection():
             port=st.secrets["mysql"]["port"]
         )
     else:
-        # Use local environment variables
+        # Use Render environment variables (from Railway)
         return mysql.connector.connect(
-            host=os.getenv('DB_HOST', 'localhost'),
-            user=os.getenv('DB_USER', 'root'),
-            password=os.getenv('DB_PASSWORD', ''),
-            database=os.getenv('DB_NAME', 'inventory')
+            host=os.getenv('MYSQLHOST'),
+            user=os.getenv('MYSQLUSER', 'root'),
+            password=os.getenv('MYSQLPASSWORD', ''),
+            database=os.getenv('MYSQLDATABASE', 'railway'),
+            port=int(os.getenv('MYSQLPORT', 24157))
         )
+
 
 
 def check_authentication():
