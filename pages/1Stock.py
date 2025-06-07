@@ -23,12 +23,14 @@ except Exception as e:
     categories = []
 
 # Select category dropdown
-selected_category = st.selectbox("Select Category", categories)
+category_options = {name: cat_id for cat_id, name in categories}
+selected_category_name = st.selectbox("Select Category", list(category_options.keys()))
+selected_category_id = category_options[selected_category_name]
 
 # Fetch products based on selected category
-if selected_category:
+if selected_category_id:
     try:
-        products = fetch_products_by_category(selected_category)
+        products = fetch_products_by_category(selected_category_id)
     except Exception as e:
         st.error(f"Error fetching products: {e}")
         products = []

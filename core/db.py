@@ -261,3 +261,33 @@ def fetch_monthly_category_summary(year, month):
     except Exception as e:
         print(f"[DB ERROR] fetch_monthly_category_summary: {e}")
         return None
+    
+
+def get_categories():
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT cat_id, cat_name FROM categories")  
+        categories = cursor.fetchall()  # Get list of (cat_id, cat_name)
+        
+        cursor.close()
+        conn.close()
+        return categories
+    except Exception as e:
+        st.error(f"❌ Error fetching categories: {e}")
+        return []
+    
+def add_product(product_name, price, cat_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    try:
+        cursor.callproc("addProduct", (product_name, price, cat_id))
+        conn.commit()
+        st.success(f"✅ Product '{product_name}' added successfully!")
+    except Exception as e:
+        st.error(f"❌ Error adding product: {e}")
+    finally:
+        cursor.close()
+        conn.close()

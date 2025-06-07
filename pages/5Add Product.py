@@ -1,16 +1,7 @@
 import streamlit as st
 import mysql.connector
 import pandas as pd
-
-# Function to connect to the database
-def get_db_connection():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="inventory"
-    )
-
+from core.db import get_db_connection, get_categories, add_product
 
 # Sidebar
 if not st.session_state.get("logged_in"):
@@ -23,37 +14,6 @@ if st.sidebar.button("Logout"):
     st.session_state.logged_in = False
     st.rerun()
 st.sidebar.image("logo.svg")
-
-# Function to call stored procedure 'addProduct'
-def add_product(product_name, price, cat_id):
-    conn = get_db_connection()
-    cursor = conn.cursor()
-
-    try:
-        cursor.callproc("addProduct", (product_name, price, cat_id))
-        conn.commit()
-        st.success(f"✅ Product '{product_name}' added successfully!")
-    except Exception as e:
-        st.error(f"❌ Error adding product: {e}")
-    finally:
-        cursor.close()
-        conn.close()
-
-# Fetch category names and IDs from database
-def get_categories():
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        
-        cursor.execute("SELECT cat_id, cat_name FROM categories")  
-        categories = cursor.fetchall()  # Get list of (cat_id, cat_name)
-        
-        cursor.close()
-        conn.close()
-        return categories
-    except Exception as e:
-        st.error(f"❌ Error fetching categories: {e}")
-        return []
 
 # Streamlit UI
 st.title("Add New Product")

@@ -1,14 +1,6 @@
 import streamlit as st
 import mysql.connector
-
-# Function to connect to the database
-def get_db_connection():
-    return mysql.connector.connect(
-        host="db",
-        user="root",
-        password="",
-        database="inventory"
-    )
+from core.db import get_db_connection
 
 # Function to validate login credentials from database
 def validate_login(username, password):
