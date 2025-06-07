@@ -3,32 +3,14 @@ import streamlit as st
 import pandas as pd
 import os
 
-# Connect to DB
-import os
-import streamlit as st
-import mysql.connector
-
 # Connect to DB (Streamlit Cloud or local)
 def get_db_connection():
-    if "mysql" in st.secrets:
-        # Use Streamlit Cloud secrets
-        return mysql.connector.connect(
-            host=st.secrets["mysql"]["host"],
-            user=st.secrets["mysql"]["user"],
-            password=st.secrets["mysql"]["password"],
-            database=st.secrets["mysql"]["database"],
-            port=st.secrets["mysql"]["port"]
-        )
-    else:
-        # Use Render environment variables (from Railway)
-        return mysql.connector.connect(
-            host=os.getenv('MYSQLHOST'),
-            user=os.getenv('MYSQLUSER', 'root'),
-            password=os.getenv('MYSQLPASSWORD', ''),
-            database=os.getenv('MYSQLDATABASE', 'railway'),
-            port=int(os.getenv('MYSQLPORT', 24157))
-        )
-
+    return mysql.connector.connect(
+        host='db',
+        user='root',
+        password='',
+        database='inventory'
+    )
 
 
 def check_authentication():
