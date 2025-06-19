@@ -1,6 +1,6 @@
-# 📦 TawK – Warehouse Management Made Simple
+# 📦 TawK – Inventory Management Made Simple
 
-**TawK** is a user-friendly warehouse management system designed to streamline stock tracking, product transactions, and category organization. Whether you're managing a small business or a growing operation, TawK helps ensure real-time inventory accuracy, minimizes manual errors, and boosts operational efficiency.
+**TawK** is a user-friendly inventory management system designed to streamline stock tracking, product transactions, and category organization. Whether you're managing a small business or a growing operation, TawK helps ensure real-time inventory accuracy, minimizes manual errors, and boosts operational efficiency.
 
 ---
 
@@ -35,7 +35,7 @@ Managing incoming or outgoing inventory is simple:
 ### 🛠 For Admins
 
 #### 1. **Transaction Log**
-Monitor warehouse activities:
+Monitor inventory activities:
 
 - Click the **Transaction** button
 - View the 10 most recent transactions
